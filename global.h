@@ -1,0 +1,83 @@
+#ifndef _GLOBAL_H_
+#define _GLOBAL_H_
+
+#define __linux__
+
+#define OS_HAVE_FILE_SYSTEM
+//#define OS_NO_FILE_SYSTEM
+
+#define TFTP_SERVER_PORT	59
+#define PROTOCAL_FILE_PORT 54501
+#define STATUS_FILE_PORT 54500
+#define TARGET_HARDWARE_IDENTIFIER "ACoreOSMP"
+#define TARGET_TYPE_NAME "FMS"
+#define TARGET_POSITION "SHANNXI"
+#define LITERAL_NAME "GROUD"
+#define MANUFACTURER_CODE "NH"
+#define PROTOCAL_VERSION "A4"
+#define TASK_PRI			120
+#define TASK_STACK_SIZE		5000
+#define MAX_HARDWARE_NAME_LEN     255
+#define MAX_HARDWARE_SERIAL_NO_LEN 255
+#define MAX_PART_COUNT    65535
+#define MAX_PART_NO_LEN   255
+#define MAX_PART_AMEMDMENT_LEN 255
+#define MAX_PART_DESIGNATION_LEN 255
+
+#define STATUS_CODE_ACCEPT 0X0001
+#define STATUS_CODE_IN_PROGRESS 0x0002
+#define STATUS_CODE_COMPLETED 0X0003
+#define STATUS_CODE_IN_PROGRESS_AND_HAS_DESCRPTION 0X0004
+#define STATUS_CODE_ABORTED_BY_THA 0X1003
+#define STATUS_CODE_ABORTED_BY_DLA 0X1004
+#define STATUS_CODE_ABORTED_BY_OPERATOR 0X1005
+
+// 在Flash中读写文件定义的地址
+
+//保存文件信息的格式为：文件名$文件版本$
+#define FLASH_FILE_INFO_ADDRESS				0xA70000		//存储文件信息的地址
+#define FLASH_FILE_INFO_LEN					0x80		//存储文件信息的长度
+#define FLASH_FILE_FLAG_O
+#define FLASH_FILE_FLAG_T
+//存储MSL的地址
+#define FLASH_WRITE_MSL_ADDRESS				0xA80000
+//MSL可以写入的最大长度
+#define MAX_MSL_FILE_SIZE					0x100
+
+//存储OS的地址
+#define FLASH_WRITE_OS_ADDRESS				0xB80000
+//OS可以写入的最大长度
+#define MAX_OS_FILE_SIZE					0x100
+
+//存储APP的地址
+#define FLASH_WRITE_APP_ADDRESS				0xC80000
+//APP可以写入的最大长度
+#define MAX_APP_FILE_SIZE					0x100
+
+//存储LUI的地址 预留64字节
+#define FLASH_WRITE_LUI_ADDRESS
+
+//存储*UR的地址 预留256字节
+#define FLASH_WRITE_LUR_ADDRESS
+
+//存储*US的地址 预留256字节
+#define FLASH_WRITE_LUS_ADDRESS
+
+//存储*NA的地址 预留512字节
+#define FLASH_WRITE_LNA_ADDRESS
+
+//存储*NL的地址 预留16304字节
+#define FLASH_WRITE_LNL_ADDRESS
+
+//存储*NO的地址 预留64字节
+#define FLASH_WRITE_LNO_ADDRESS
+
+//存储*NS的地址 预留256字节
+#define FLASH_WRITE_LNS_ADDRESS
+
+//Flash可以访问的起始地址
+#define FLASH_MIN_WRITE_ADDRESS_START		0x800000
+//Flash可以访问的结束地址
+#define FLASH_MAX_WRITE_ADDRESS_END			0x1000000
+
+#endif
